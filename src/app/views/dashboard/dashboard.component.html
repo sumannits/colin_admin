@@ -1,0 +1,466 @@
+<div class="animated fadeIn">
+    <!--<div class="row">
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body pb-0">
+                    <h4 class="mb-0">9.823</h4>
+                    <p>New Projects</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <canvas baseChart class="chart" [datasets]="lineChart1Data" [labels]="lineChart1Labels" [options]="lineChart1Options" [colors]="lineChart1Colours" [legend]="lineChart1Legend" [chartType]="lineChart1Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-info">
+                <div class="card-body pb-0">
+
+                    <h4 class="mb-0">9.823</h4>
+                    <p>Members</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <canvas baseChart class="chart" [datasets]="lineChart2Data" [labels]="lineChart2Labels" [options]="lineChart2Options" [colors]="lineChart2Colours" [legend]="lineChart2Legend" [chartType]="lineChart2Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body pb-0">
+
+                    <h4 class="mb-0">9.823</h4>
+                    <p>Freelancers</p>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <canvas baseChart class="chart" [datasets]="lineChart3Data" [labels]="lineChart3Labels" [options]="lineChart3Options" [colors]="lineChart3Colours" [legend]="lineChart3Legend" [chartType]="lineChart3Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-danger">
+                <div class="card-body pb-0">
+
+                    <h4 class="mb-0">9.823</h4>
+                    <p>Customers</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <canvas baseChart class="chart" [datasets]="barChart1Data" [labels]="barChart1Labels" [options]="barChart1Options" [colors]="barChart1Colours" [legend]="barChart1Legend" [chartType]="barChart1Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+
+
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Dashboard
+                </div>
+                <div class="card-body">
+
+                    
+                    <br>
+                    <div class="table-responsive"></div>
+                    <h6>Coming soon.</h6>
+                    <table class="table table-responsive table-hover table-outline mb-0">
+                        <thead class="thead-default">
+                            <tr>
+                                <th class="text-center"><i class="icon-people"></i></th>
+                                <th>User</th>
+                                <th class="text-center">Payment Method</th>
+                                <th>Activity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">
+                                    <div class="avatar">
+                                        <img src="assets/img/avatars/1.jpg" class="img-avatar" alt="admin@bootstrapmaster.com" src="assets/img/avatars/1.jpg">
+                                        <span class="avatar-status badge-success"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>Yiorgos Avraamu</div>
+                                    <div class="small text-muted">
+                                        <span>New</span> | Registered: Jan 1, 2015
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <i class="fa fa-cc-mastercard" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    <div class="small text-muted">Last login</div>
+                                    <strong>10 sec ago</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+        </div>
+        
+    </div> -->
+    <div class="row">
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body pb-0">
+                    <h4 class="mb-0">{{totalUsers}}</h4>
+                    <p>Total Users</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <!--<canvas baseChart class="chart" [datasets]="lineChart1Data" [labels]="lineChart1Labels" [options]="lineChart1Options" [colors]="lineChart1Colours" [legend]="lineChart1Legend" [chartType]="lineChart1Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-info">
+                <div class="card-body pb-0">
+                    <h4 class="mb-0">{{onlineUser}}</h4>
+                    <p>Online Users</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <!--<canvas baseChart class="chart" [datasets]="lineChart2Data" [labels]="lineChart2Labels" [options]="lineChart2Options" [colors]="lineChart2Colours" [legend]="lineChart2Legend" [chartType]="lineChart2Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body pb-0">
+
+                    <h4 class="mb-0">{{totalEvents}}</h4>
+                    <p>Total Events</p>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <!--<canvas baseChart class="chart" [datasets]="lineChart3Data" [labels]="lineChart3Labels" [options]="lineChart3Options" [colors]="lineChart3Colours" [legend]="lineChart3Legend" [chartType]="lineChart3Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body pb-0">
+
+                    <h4 class="mb-0">{{totalActiveEvents}}</h4>
+                    <p>Total Active Events</p>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <!--<canvas baseChart class="chart" [datasets]="lineChart3Data" [labels]="lineChart3Labels" [options]="lineChart3Options" [colors]="lineChart3Colours" [legend]="lineChart3Legend" [chartType]="lineChart3Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-danger">
+                <div class="card-body pb-0">
+
+                    <h4 class="mb-0">{{totalCommunity}}</h4>
+                    <p>Total Communities</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <!--<canvas baseChart class="chart" [datasets]="barChart1Data" [labels]="barChart1Labels" [options]="barChart1Options" [colors]="barChart1Colours" [legend]="barChart1Legend" [chartType]="barChart1Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body pb-0">
+
+                    <h4 class="mb-0">{{totalGroup}}</h4>
+                    <p>Total Groups</p>
+                </div>
+                <div class="chart-wrapper" style="height:70px;">
+                    <!--<canvas baseChart class="chart" [datasets]="lineChart3Data" [labels]="lineChart3Labels" [options]="lineChart3Options" [colors]="lineChart3Colours" [legend]="lineChart3Legend" [chartType]="lineChart3Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+        <!--<div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-danger">
+                <div class="card-body pb-0">
+
+                    <h4 class="mb-0">{{19}}</h4>
+                    <p>Total Communitiy Chats</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <canvas baseChart class="chart" [datasets]="barChart1Data" [labels]="barChart1Labels" [options]="barChart1Options" [colors]="barChart1Colours" [legend]="barChart1Legend" [chartType]="barChart1Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>-->
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body pb-0">
+                    <h4 class="mb-0">{{totalInactiveUser}}</h4>
+                    <p>Inactive Users</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <!--<canvas baseChart class="chart" [datasets]="lineChart1Data" [labels]="lineChart1Labels" [options]="lineChart1Options" [colors]="lineChart1Colours" [legend]="lineChart1Legend" [chartType]="lineChart1Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-info">
+                <div class="card-body pb-0">
+                    <h4 class="mb-0">{{totalActiveUser}}</h4>
+                    <p>Active Users</p>
+                </div>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                    <!--<canvas baseChart class="chart" [datasets]="lineChart2Data" [labels]="lineChart2Labels" [options]="lineChart2Options" [colors]="lineChart2Colours" [legend]="lineChart2Legend" [chartType]="lineChart2Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+      </div>
+      <!--/.row-->
+
+      
+     
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              Traffic &amp; Activity
+            </div>
+            <div class="card-body">
+              
+              <br/>
+              <table class="table table-responsive-sm table-hover table-outline mb-0">
+                <thead class="thead-light">
+                  <tr>
+                    <th class="text-center">
+                      <i class="icon-people"></i>
+                    </th>
+                    <th>User</th>
+                     <!--<th>Usage</th>
+                   <th class="text-center">Payment Method</th>-->
+                    <th>Activity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let userActData of userActivity">
+                    <td class="text-center">
+                      <div class="avatar">
+                        <img src="./assets/img/avatars/user_128.png" *ngIf="!userActData.customer.image" class="img-avatar" alt="{{userActData.customer.email}}">
+                        <span *ngIf="userActData.is_login" class="avatar-status badge-success"></span>
+                        <span *ngIf="!userActData.is_login" class="avatar-status badge-secondary"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>{{userActData.customer.name}}</div>
+                      <div class="small text-muted">
+                         Registered: {{userActData.customer.reg_date | date:'MMM dd, yyyy' }}
+                      </div>
+                    </td>
+                    <!--<td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>50%</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>-->
+                    <td>
+                      <div class="small text-muted">Last login</div>
+                      <strong>{{userActData.cdate | date:'MMM dd, yyyy h:mm a'}}</strong>
+                    </td>
+                  </tr>
+                  <tr *ngIf="userActivity.length == 0">
+                      <td colspan="3" style="text-align:center;"> No activity found</td>
+                  </tr>
+                  <!--<tr>
+                    <td class="text-center">
+                      <div class="avatar">
+                        <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <span class="avatar-status badge-danger"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Avram Tarasios</div>
+                      <div class="small text-muted">
+
+                        <span>Recurring</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>10%</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <i class="fa fa-cc-visa" style="font-size:24px"></i>
+                    </td>
+                    <td>
+                      <div class="small text-muted">Last login</div>
+                      <strong>5 minutes ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="avatar">
+                        <img src="assets/img/avatars/3.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <span class="avatar-status badge-warning"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Quintin Ed</div>
+                      <div class="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>74%</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <i class="fa fa-cc-stripe" style="font-size:24px"></i>
+                    </td>
+                    <td>
+                      <div class="small text-muted">Last login</div>
+                      <strong>1 hour ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="avatar">
+                        <img src="assets/img/avatars/4.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <span class="avatar-status badge-secondary"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Enéas Kwadwo</div>
+                      <div class="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>98%</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <i class="fa fa-paypal" style="font-size:24px"></i>
+                    </td>
+                    <td>
+                      <div class="small text-muted">Last login</div>
+                      <strong>Last month</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="avatar">
+                        <img src="assets/img/avatars/5.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <span class="avatar-status badge-success"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Agapetus Tadeáš</div>
+                      <div class="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>22%</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <i class="fa fa-google-wallet" style="font-size:24px"></i>
+                    </td>
+                    <td>
+                      <div class="small text-muted">Last login</div>
+                      <strong>Last week</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="avatar">
+                        <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <span class="avatar-status badge-danger"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Friderik Dávid</div>
+                      <div class="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>43%</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <i class="fa fa-cc-amex" style="font-size:24px"></i>
+                    </td>
+                    <td>
+                      <div class="small text-muted">Last login</div>
+                      <strong>Yesterday</strong>
+                    </td>
+                  </tr>-->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+      <!--/.row-->
+    
+</div>

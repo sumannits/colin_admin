@@ -1,0 +1,64 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <form [formGroup]="rForm" class="form-horizontal" (ngSubmit)="addInterest(rForm.value)">
+                    <div class="card-header">
+                        <strong>Interest</strong>
+                    </div>
+                    <div class="card-body">
+                        <alert type="danger" *ngIf = "checkIsNameExist">
+                            <strong>Error!</strong> The interest name is already exist. Please try another one.
+                        </alert>
+                        <div class="form-group">
+                            <label for="company">Name <span>*</span></label>
+                            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter name" (ngModelChange)="checkInterestName($event)">
+                            <div class="text-danger" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">Please enter name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectUser">Select Paranet </label>
+                            <angular2-multiselect [data]="InterestDropdownList" 
+                              [(ngModel)]="selectedIntItems" 
+                              [ngModelOptions]="{standalone: true}"
+                              [settings]="dropdownSettingsInterest">
+                          </angular2-multiselect>
+                        </div>
+                        <!--<div class="form-group">
+                            <label for="company">Select Paranet </label>
+                            <select class="form-control" formControlName="is_pid" [(ngModel)]="is_dpid">
+                                <option [value]="0"> Paranet</option>
+                                <option [value]="cat.id" *ngFor="let cat of pinterestList"> {{cat.name}}</option>
+                            </select>
+                        </div>-->
+                        <div class="form-group">
+                            <label for="vat">Description</label>
+                            <textarea formControlName="description" class="form-control" id="name" placeholder="Enter Equivalencies with comma (,) separated"></textarea>
+                            <!-- <div  [froalaEditor]="editorOptions" [(froalaModel)]="content"></div> -->
+                            <!--<app-tinymce formControlName="description" name='description'></app-tinymce>-->
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="is_active">
+                                <input type="checkbox" id="is_active"  [checked]="is_active" (change)="changeIsActive($event)"> Is Active
+                            </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="is_hidden">
+                                    <input type="checkbox" id="is_hidden"  [checked]="is_hidden" (change)="changeIsHidden($event)"> Is Hidden
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary" [disabled]="!rForm.valid && !checkIsNameExist"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                        <button type="button" class="btn btn-sm btn-danger" (click)="goToList()"><i class="fa fa-ban"></i> Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--/.col-->
+    </div>
+    <!--/.row-->
+</div>

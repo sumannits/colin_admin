@@ -1,0 +1,115 @@
+<div class="animated fadeIn">  
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Sub Group List of "{{detailsData.name}}"           
+           <span style="float:right">
+             <a [routerLink]="['/group/add_sub_group',groupId]" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; ADD</a>
+            </span>
+          </div>
+          <div class="card-body">
+              <div>
+                  <input type="text" [(ngModel)]="searchData" (keyup)="CustomSearch($event)" placeholder="Search..">
+              </div>
+            
+              <data-table id="persons-grid"
+              [pagination_limit]="true"
+              [items]="items"
+              [itemCount]="itemCount"
+              [limit]="defaultRec"
+              [indexColumn]="false"
+              (reload)="reloadItems($event)"
+              >
+              <data-table-column
+                  [property]="'id'"
+                  [header]="'#'"
+                  [width]="50"
+                  [sortable]="true"
+                  [resizable]="true">
+              </data-table-column>
+              <data-table-column
+                  [property]="'name'"
+                  [header]="'Name'"
+                  [sortable]="true"
+                  [resizable]="true">
+                    <ng-template #dataTableCell let-item="item">
+                        <span> {{ item.name }}</span>
+                    </ng-template>
+              </data-table-column>
+              <data-table-column
+                  [property]="'location'"
+                  [header]="'Location'"
+                  [sortable]="true"
+                  [resizable]="true">
+              </data-table-column>
+                <data-table-column
+                    [property]="'loc_lat'"
+                    [header]="'Latitude'"
+                    [sortable]="true"
+                    [resizable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'loc_long'"
+                    [header]="'Longitude'"
+                    [sortable]="true"
+                    [resizable]="true">
+                </data-table-column>
+              <data-table-column
+                  [property]="'tot_user'"
+                  [header]="'Total User'"
+                  [sortable]="true"
+                  [resizable]="true">
+              </data-table-column>
+              <data-table-column
+                  [property]="'item.grpinterest'"
+                  [header]="'Interest'"
+                  [sortable]="true"
+                  [resizable]="true">
+                    <ng-template #dataTableCell let-item="item">
+                        <div *ngIf="item.grpinterest.length > 0">
+                            <span *ngFor="let inst of item.grpinterest; index as i"> {{ i > 0? ', ':''}} {{inst.interest.name}}</span>
+                        </div>
+                    </ng-template>
+              </data-table-column>
+              <data-table-column
+                  [property]="'is_active'"
+                  [header]="'Is Active'"
+                  [sortable]="true"
+                  [resizable]="true">
+                  <ng-template #dataTableCell let-item="item">
+                      <span> {{ item.is_active === true ? 'Active' : 'Inactive' }}</span>
+                  </ng-template>
+              </data-table-column>
+              <data-table-column
+                  [property]="'last_activity'"
+                  [header]="'Last Activity'"
+                  [sortable]="true"
+                  [resizable]="true">
+                    <ng-template #dataTableCell let-item="item">
+                        <span> {{item.last_activity | date:'MMM dd, yyyy h:mm a'}}</span>
+                    </ng-template>
+              </data-table-column>
+              <data-table-column
+                  [property]="'id'"
+                  [header]="'Action'"
+                  [width]="200"
+                  [resizable]="true">
+                  <ng-template #dataTableCell let-item="item">
+                      <a [routerLink]="['/group/edit',item.id]" class="btn btn-success"><i class="fa fa-magic"></i>&nbsp; Edit</a>
+                      <button type="button" class="btn btn-danger" (click)="deleteGroup(item.id,groupId)"><i class="fa fa-trash"></i>&nbsp; Delete</button>
+                      <a [routerLink]="['/group/view',item.id]" style="margin-top: 5px;" class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp; View</a>
+                      <a [routerLink]="['/group/chat',item.id]" style="margin-top: 5px;" class="btn btn-primary"><i class="fa fa-comments"></i>&nbsp; Chat</a>
+                      <a [routerLink]="['/group/reports',item.id]" style="margin-top: 5px;" class="btn btn-success"><i class="fa fa-eye"></i>&nbsp; Abuse reports</a>
+                  </ng-template>
+              </data-table-column>
+          </data-table> 
+           
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+  </div>
+  

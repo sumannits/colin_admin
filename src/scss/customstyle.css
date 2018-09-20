@@ -1,0 +1,63 @@
+.glyphicon-refresh:before {
+    content: "\e031";
+}
+
+.glyphicon-list:before {
+    content: "\e056";
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.column-selector-box {
+    background-color: #E3E4E5 !important;
+    box-shadow: 0 0 4px lightgrey !important;
+}
+
+.glyphicon-list:before {
+    content: "";
+    background: url('../assets/img/list-50.png');
+    width: 16px;
+    height: 17px;
+    display: block;
+    background-size: cover;
+}
+.btn-sm, .btn-group-sm > .btn {
+    line-height: normal !important;
+}
+.glyphicon-refresh:before {
+    content: "";
+    background: url('../assets/img/refresh.png');
+    width: 16px;
+    height: 17px;
+    display: block;
+    background-size: cover;
+}
+
+/******************Google autocomplete box Style********************************/
+.custom-autocomplete__input[_ngcontent-c1] input[_ngcontent-c1] {
+    border: 1px solid #c2cfd6 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25 !important;
+    height: 35px !important;
+}
+.custom-autocomplete__dropdown[_ngcontent-c1]{
+    top: 35px !important;
+}
+.custom-autocomplete__container[_ngcontent-c1], .custom-autocomplete__input[_ngcontent-c1]{
+    margin-bottom: 11px !important;
+}
+.search-icon[_ngcontent-c1] i[_ngcontent-c1]{
+    height: 18px !important;
+    width: 18px !important;
+}
+  /************************End Google autocomplete box Style****************************/

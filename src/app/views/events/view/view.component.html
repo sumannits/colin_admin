@@ -1,0 +1,67 @@
+<div class="animated fadeIn">  
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Event Details            
+        </div>
+        <div class="card-body">
+          <div class="bd-example">
+            <dl class="row">
+              <dt class="col-sm-3">Name</dt>
+              <dd class="col-sm-9">{{eventDetails?.name}}</dd>
+
+              <dt class="col-sm-3">Event Date</dt>
+              <dd class="col-sm-9">{{eventDetails?.event_date | date:'MMM dd, yyyy'}}</dd>
+
+              <dt class="col-sm-3">Location</dt>
+              <dd class="col-sm-9">
+                  <agm-map *ngIf="grpLat && grpLong" [latitude]="grpLat" [longitude]="grpLong" style="height:200px;width:80%"
+                  [zoom]="8">
+                      <agm-marker [latitude]="grpLat" [longitude]="grpLong">
+                          <agm-info-window>
+                              <strong>{{eventDetails?.location}}</strong>
+                          </agm-info-window>
+                      </agm-marker>
+                  </agm-map>
+              </dd>
+
+              <dt class="col-sm-3">Latitude</dt>
+              <dd class="col-sm-9">{{grpLat}}</dd>
+
+              <dt class="col-sm-3">Longitude</dt>
+              <dd class="col-sm-9">{{grpLong}}</dd>
+
+              <dt class="col-sm-3">User</dt>
+              <dd class="col-sm-9"> 
+                  <dl class="row" *ngIf="selectedUser.length > 0">
+                      <dd class="col-sm-12" *ngFor="let userData of selectedUser"><a [routerLink]="['/customers/view',userData.customer.id]">{{userData.customer.name}}</a></dd>
+                  </dl>
+                  <p style="padding-left: 0px;" class="col-sm-12" *ngIf="selectedUser.length == 0" > No user select </p> 
+              </dd>
+
+              <dt class="col-sm-3">Interest</dt>
+              <dd class="col-sm-9"> 
+                  <dl class="row" *ngIf="selectedInterest.length > 0">
+                      <dd class="col-sm-12" *ngFor="let intData of selectedInterest">{{intData.interest.name}}</dd>
+                  </dl>
+                  <p style="padding-left: 0px;" class="col-sm-12" *ngIf="selectedInterest.length == 0">No interest select</p> 
+              </dd>
+
+              <dt class="col-sm-3">Description</dt>
+              <dd class="col-sm-9" [innerHTML]="eventDetails?.description"> </dd>
+
+              <dt class="col-sm-3">Event Creation Date</dt>
+              <dd class="col-sm-9">{{eventDetails?.created_at | date:'MMM dd, yyyy h:mm a'}}</dd>
+              
+              <dt class="col-sm-3">Status</dt>
+              <dd class="col-sm-9">{{ eventDetails?.is_active === true ? 'Active' : 'Inactive' }}</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+</div>

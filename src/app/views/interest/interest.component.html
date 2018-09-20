@@ -1,0 +1,141 @@
+<div class="animated fadeIn">  
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Interest List            
+         <span style="float:right"><a [routerLink]="['/interest/add']" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; ADD</a></span>
+        </div>
+        <div class="card-body">
+            <div>
+                <input type="text" [(ngModel)]="searchData" placeholder="Search..">
+            </div>
+          
+            <data-table id="persons-grid"
+            [pagination_limit]="true"
+            [items]="items | filter:searchData"
+            [itemCount]="itemCount"
+            [limit]="defaultRec"
+            [indexColumn]="false"
+            (reload)="reloadItems($event)"
+            >
+            <data-table-column
+                [property]="'id'"
+                [header]="'#'"
+                [width]="50"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'name'"
+                [header]="'Name'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'tot_equivalencies'"
+                [header]="'Total Equivalencies'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <!--<data-table-column
+                [property]="'is_pid'"
+                [header]="'Type'"
+                [sortable]="true"
+                [resizable]="true">
+                <ng-template #dataTableCell let-item="item">
+                    <span> {{item.is_pid > 0 ? 'Children' : 'Parent'}}</span>
+                </ng-template>
+            </data-table-column>-->
+            <data-table-column
+                [property]="'tot_children'"
+                [header]="'Total Parent'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'tot_user'"
+                [header]="'Total User'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'tot_event'"
+                [header]="'Total Event'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'tot_group'"
+                [header]="'Total Group'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'tot_community'"
+                [header]="'Total Community'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'is_active'"
+                [header]="'Is Active'"
+                [sortable]="true"
+                [resizable]="true">
+                <ng-template #dataTableCell let-item="item">
+                    <span> {{item.is_active === true ? 'Active' : 'Inactive'}}</span>
+                </ng-template>
+            </data-table-column>
+            <data-table-column
+                [property]="'is_hidden'"
+                [header]="'Is Hidden'"
+                [width]="100"
+                [sortable]="true"
+                [resizable]="true">
+                <ng-template #dataTableCell let-item="item">
+                    <span> {{item.is_hidden === true ? 'Yes' : 'No'}}</span>
+                </ng-template>
+            </data-table-column>
+            <data-table-column
+                [property]="'id'"
+                [header]="'Action'"
+                [width]="165"
+                [resizable]="true">
+                <ng-template #dataTableCell let-item="item">
+                    <a [routerLink]="['/interest/view',item.id]" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i>&nbsp; View</a>
+                    <a [routerLink]="['/interest/edit',item.id]" class="btn btn-sm btn-success"><i class="fa fa-magic"></i>&nbsp; Edit</a>
+                    <button style="margin-top:5px;" type="button" class="btn btn-sm btn-danger" (click)="deleteInterest(item.id)"><i class="fa fa-trash"></i>&nbsp; Delete</button>
+                </ng-template>
+            </data-table-column>
+        </data-table>  
+
+
+          <!--<table class="table table-bordered table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Name</th> 
+                <th>Is Active</th> 
+                <th>Is Hidden</th>                                                
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let interest of interestList">
+                
+                <td>{{interest.name}}</td>
+                <td>{{interest.is_active === true ? 'active' : 'inactive'}}</td> 
+                <td>{{interest.is_hidden === true ? 'Yes' : 'No'}}</td>                                
+                <td>
+                <a [routerLink]="['/interest/edit',interest.id]" class="btn btn-success"><i class="fa fa-magic"></i>&nbsp; Edit</a>
+                <button type="button" class="btn btn-danger" (click)="deleteInterest(interest.id)"><i class="fa fa-trash"></i>&nbsp; Delete</button>
+                </td>
+              </tr>               
+            </tbody>
+          </table>-->
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+</div>

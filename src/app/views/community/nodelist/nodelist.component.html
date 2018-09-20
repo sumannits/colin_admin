@@ -1,0 +1,97 @@
+<div class="animated fadeIn">  
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Node List of {{communityDetails.name}}           
+         <span style="float:right"><a [routerLink]="['/community/node_add', communityId]" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; ADD</a></span>
+        </div>
+        <div class="card-body">
+            <div>
+                <input type="text" [(ngModel)]="searchData" (keyup)="CustomSearch($event)" placeholder="Search..">
+            </div>
+          
+            <data-table id="persons-grid"
+            [pagination_limit]="true"
+            [items]="items"
+            [itemCount]="itemCount"
+            [limit]="defaultRec"
+            [indexColumn]="false"
+            (reload)="reloadItems($event)"
+            >
+            <data-table-column
+                [property]="'id'"
+                [header]="'#'"
+                [width]="50"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'name'"
+                [header]="'Node Name'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'location'"
+                [header]="'Location'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'latitude'"
+                [header]="'Latitude'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'longitude'"
+                [header]="'Longitude'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'tot_user'"
+                [header]="'Total User'"
+                [sortable]="true"
+                [resizable]="true">
+            </data-table-column>
+            <data-table-column
+                [property]="'item.grpinterest'"
+                [header]="'Interest'"
+                [sortable]="true"
+                [resizable]="true">
+                  <ng-template #dataTableCell let-item="item">
+                      <div *ngIf="item.grpinterest.length > 0">
+                          <span *ngFor="let inst of item.grpinterest; index as i"> {{ i > 0? ', ':''}} {{inst.interest.name}}</span>
+                      </div>
+                  </ng-template>
+            </data-table-column>
+            <data-table-column
+                [property]="'is_active'"
+                [header]="'Is Active'"
+                [sortable]="true"
+                [resizable]="true">
+                <ng-template #dataTableCell let-item="item">
+                    <span> {{ item.is_active === true ? 'Active' : 'Inactive' }}</span>
+                </ng-template>
+            </data-table-column>
+            <data-table-column
+                [property]="'id'"
+                [header]="'Action'"
+                [width]="150"
+                [resizable]="true">
+                <ng-template #dataTableCell let-item="item">
+                    <a [routerLink]="['/community/node_edit',item.id]" class="btn btn-success"><i class="fa fa-magic"></i>&nbsp; Edit</a>
+                    <button style="margin-top: 5px;" type="button" class="btn btn-danger" (click)="deleteNode(item.id)"><i class="fa fa-trash"></i>&nbsp; Delete</button>
+                    <a [routerLink]="['/community/node_view',item.id]" style="margin-top: 5px;" class="btn btn-primary"><i class="fa fa-eye"></i>&nbsp; View</a>
+                </ng-template>
+            </data-table-column>
+        </data-table>  
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+</div>

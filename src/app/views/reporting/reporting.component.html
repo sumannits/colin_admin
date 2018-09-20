@@ -1,0 +1,38 @@
+<div class="animated fadeIn">  
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Reporting Details            
+        </div>
+        <div class="card-body">
+         <div class="row">
+            <div class="col-sm-12 col-lg-12">
+              <p-tabView>
+                  <p-tabPanel header="Day Wise">
+                      <div class="col-sm-12 col-lg-12">
+                          <p-chart type="line" [data]="dataday"></p-chart>
+                      </div>
+                  </p-tabPanel>
+                  <p-tabPanel header="Monthly" [selected]="true">
+                      <div class="col-sm-12 col-lg-12">
+                          <!--<p-chart type="line" [data]="data" [width]="920" [height]="460" (onDataSelect)="selectData($event)"></p-chart>-->
+                          <p-chart type="line" [data]="datamonth"></p-chart>
+                      </div>
+                  </p-tabPanel>
+                  <p-tabPanel header="Yearly">
+                      <div class="col-sm-12 col-lg-12">
+                          <p-chart type="line" [data]="datayearly"></p-chart>
+                      </div>   
+                  </p-tabPanel>
+              </p-tabView>
+            </div>
+            <!--<p-growl [value]="msgs"></p-growl>-->
+         </div>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+</div>
