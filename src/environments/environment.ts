@@ -18,8 +18,8 @@ const setHttpHeaders = () => {
 export const environment = {
   production: false,
   //baseurl: 'http://192.168.1.20:3000/api/',
-  baseurl: 'http://192.168.1.68:3000/api/',
-  //baseurl: 'http://111.93.169.90:3006/api/',
+  //baseurl: 'http://192.168.1.68:3000/api/',
+  baseurl: 'http://111.93.169.90:3006/api/',
   headers: setHttpHeaders
 };
 
